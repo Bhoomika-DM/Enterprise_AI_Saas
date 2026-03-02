@@ -31,13 +31,12 @@ app.add_middleware(
     secret_key=settings.jwt_secret
 )
 
-# CORS middleware — use exact deployed URLs
+# ✅ CORS middleware — only deployed frontend URL
 frontend_url = "https://unique-freedom-production-db37.up.railway.app"
-backend_url = "https://enterpriseaisaas-production.up.railway.app"
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[frontend_url, backend_url],
+    allow_origins=[frontend_url],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
