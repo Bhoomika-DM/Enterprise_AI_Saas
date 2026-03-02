@@ -1,26 +1,15 @@
-from supabase import create_client, Client
-from config import get_settings
+"""
+Temporary Database Disabled
+Supabase is disabled for now.
+Only Google authentication will be used.
+"""
 
-settings = get_settings()
-
-# Initialize Supabase client
-supabase: Client = create_client(
-    settings.supabase_url,
-    settings.supabase_key
-)
-
-# Service role client for admin operations
-supabase_admin: Client = create_client(
-    settings.supabase_url,
-    settings.supabase_service_key
-)
+from typing import Optional
 
 
-def get_supabase() -> Client:
-    """Get Supabase client instance"""
-    return supabase
+def get_supabase() -> Optional[None]:
+    return None
 
 
-def get_supabase_admin() -> Client:
-    """Get Supabase admin client instance"""
-    return supabase_admin
+def get_supabase_admin() -> Optional[None]:
+    return None
