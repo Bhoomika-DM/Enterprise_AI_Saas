@@ -1,0 +1,50 @@
+/* TopMenuBar Styles - Custom Color Palette */
+
+.top-menu-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-focus);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  user-select: none;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.menu-bar-left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.menu-bar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-bar-right {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+}
+
+.ide-title {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ide-title {
+    display: none;
+  }
+}

@@ -1,0 +1,71 @@
+/* Tab Styles - VS Code Parity */
+
+.tab {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 12px;
+  background-color: #2d2d2d;
+  border-right: 1px solid #252526;
+  cursor: pointer;
+  user-select: none;
+  min-width: 120px;
+  max-width: 200px;
+  transition: background-color 100ms ease;
+}
+
+.tab:hover {
+  background-color: #2a2d2e;
+}
+
+.tab.active {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.unsaved-indicator {
+  color: #ffffff;
+  font-size: 16px;
+  margin-right: 6px;
+  line-height: 1;
+}
+
+.tab-label {
+  flex: 1;
+  font-size: 13px;
+  color: #cccccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.tab.active .tab-label {
+  color: #ffffff;
+}
+
+.tab-close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  background: transparent;
+  border: none;
+  color: #858585;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 3px;
+}
+
+.tab:hover .tab-close {
+  display: flex;
+}
+
+.tab-close:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cccccc;
+}

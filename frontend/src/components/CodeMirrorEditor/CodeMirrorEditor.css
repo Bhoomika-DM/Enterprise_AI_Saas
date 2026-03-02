@@ -1,0 +1,123 @@
+/* CodeMirrorEditor Styles - Theme-aware with CSS Variables */
+
+.codemirror-editor {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  overflow: hidden;
+  background-color: var(--editor-bg) !important;
+  --editor-font-family: 'Plus Jakarta Sans';
+}
+
+.codemirror-editor .cm-editor {
+  height: 100%;
+  font-family: var(--editor-font-family), 'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: var(--editor-bg) !important;
+  color: var(--editor-text) !important;
+}
+
+.codemirror-editor .cm-scroller {
+  overflow: auto;
+  font-family: inherit;
+  background-color: var(--editor-bg) !important;
+}
+
+.codemirror-editor .cm-content {
+  font-family: inherit;
+  padding: 0;
+  background-color: var(--editor-bg) !important;
+  color: var(--editor-text) !important;
+}
+
+.codemirror-editor .cm-line {
+  padding: 0 4px;
+  color: var(--editor-text) !important;
+}
+
+/* Ensure gutters use theme colors */
+.codemirror-editor .cm-gutters {
+  background-color: var(--editor-bg) !important;
+  color: var(--editor-gutter) !important;
+}
+
+/* Ensure cursor uses theme color */
+.codemirror-editor .cm-cursor {
+  border-left-color: var(--editor-cursor) !important;
+}
+
+/* Error state */
+.codemirror-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 20px;
+}
+
+.codemirror-error p {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--status-error);
+}
+
+.codemirror-error button {
+  padding: 8px 16px;
+  background-color: var(--accent-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.codemirror-error button:hover {
+  background-color: var(--accent-hover);
+}
+
+
+/* Minimap Styles */
+.cm-minimap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background-color: var(--editor-bg) !important;
+  border-left: 1px solid var(--border-primary) !important;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cm-minimap-gutter {
+  background-color: var(--editor-bg) !important;
+}
+
+.cm-minimap-overlay {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid var(--border-focus) !important;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.cm-minimap-overlay:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  opacity: 0.7;
+}
+
+.cm-minimap .cm-gutterElement {
+  color: var(--editor-gutter) !important;
+  font-size: 1px;
+}
+
+.cm-minimap .cm-line {
+  font-size: 1px;
+  line-height: 2px;
+  color: var(--editor-text) !important;
+}

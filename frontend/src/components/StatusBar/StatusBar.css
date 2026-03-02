@@ -1,0 +1,119 @@
+/* StatusBar Styles - Theme-aware */
+
+.status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 22px;
+  background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-hover) 100%);
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  padding: 0 8px;
+  user-select: none;
+  z-index: 100;
+  box-shadow: var(--shadow-md);
+}
+
+.status-bar-left,
+.status-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  height: 100%;
+  white-space: nowrap;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.status-item.clickable {
+  cursor: pointer;
+}
+
+.status-item.clickable:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.status-item.git-branch {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.status-item.language {
+  font-weight: 600;
+}
+
+.status-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.status-text {
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .status-bar-left .status-item:not(.git-branch) {
+    display: none;
+  }
+}
+
+/* Dataset Selector in Status Bar - VS Code Style */
+.status-item.dataset-selector-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-item.dataset-selector-status:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.status-item.dataset-selector-status .status-icon {
+  font-size: 13px;
+}
+
+.status-item.dataset-selector-status .status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Remove old dropdown styles */
+.status-label {
+  display: none;
+}
+
+.dataset-dropdown-status {
+  display: none;
+}
+
+/* Dataset metadata items */
+.status-item[title*="rows"],
+.status-item[title*="columns"],
+.status-item[title*="missing"] {
+  font-size: 11px;
+  opacity: 0.9;
+  padding: 0 6px;
+}
+
+.status-item[title*="rows"]:hover,
+.status-item[title*="columns"]:hover,
+.status-item[title*="missing"]:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}

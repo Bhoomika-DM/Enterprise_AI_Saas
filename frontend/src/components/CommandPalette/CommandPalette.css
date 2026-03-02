@@ -1,0 +1,137 @@
+/* CommandPalette Styles - Theme-aware */
+
+.command-palette-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  z-index: 3000;
+}
+
+.command-palette {
+  width: 600px;
+  max-width: 90vw;
+  max-height: 500px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.command-palette-input {
+  width: 100%;
+  padding: 16px 20px;
+  background-color: var(--bg-tertiary);
+  border: none;
+  border-bottom: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  outline: none;
+}
+
+.command-palette-input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.command-palette-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 0;
+}
+
+.command-palette-results::-webkit-scrollbar {
+  width: 10px;
+}
+
+.command-palette-results::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.command-palette-results::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 5px;
+}
+
+.command-palette-results::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+.command-palette-item {
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.command-palette-item:hover,
+.command-palette-item.selected {
+  background-color: var(--bg-hover);
+}
+
+.command-item-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.command-item-label {
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.command-item-shortcut {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  background-color: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid var(--border-primary);
+}
+
+.command-item-category {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.command-palette-empty {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.command-palette-footer {
+  display: flex;
+  gap: 16px;
+  padding: 8px 20px;
+  background-color: var(--bg-tertiary);
+  border-top: 1px solid var(--border-primary);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.footer-hint {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .command-palette {
+    width: 90vw;
+  }
+
+  .command-palette-footer {
+    display: none;
+  }
+}

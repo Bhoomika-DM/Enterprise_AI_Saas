@@ -1,0 +1,285 @@
+/**
+ * ExtensionsPanel Styles
+ */
+
+.extensions-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(10, 15, 35, 0.95);
+}
+
+.extensions-search {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.extensions-search input {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(15, 20, 40, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+.extensions-search input:focus {
+  outline: none;
+  border-color: #C96731;
+  box-shadow: 0 0 0 2px rgba(201, 103, 49, 0.1);
+}
+
+.extensions-search input::placeholder {
+  color: rgb(107, 114, 128);
+}
+
+.extensions-filters {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.filter-button {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgb(229, 231, 235);
+}
+
+.filter-button.active {
+  background: rgba(201, 103, 49, 0.15);
+  border-color: rgba(201, 103, 49, 0.3);
+  color: #C96731;
+}
+
+.category-filters {
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.category-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: rgba(15, 20, 40, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+.category-select:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  background: rgba(15, 20, 40, 0.9);
+}
+
+.category-select:focus {
+  outline: none;
+  border-color: #C96731;
+  box-shadow: 0 0 0 2px rgba(201, 103, 49, 0.1);
+}
+
+.category-select option {
+  background: rgb(15, 20, 40);
+  color: rgb(229, 231, 235);
+  padding: 8px;
+}
+
+.extensions-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.extensions-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.extensions-list::-webkit-scrollbar-track {
+  background: rgba(10, 15, 35, 0.5);
+}
+
+.extensions-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.extensions-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.no-extensions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  color: rgb(107, 114, 128);
+}
+
+.no-extensions p {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(156, 163, 175);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.no-extensions span {
+  font-size: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.extension-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(15, 20, 40, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 8px;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.extension-item:hover {
+  background: rgba(15, 20, 40, 0.8);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.extension-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.extension-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.extension-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.extension-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.extension-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(229, 231, 235);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.installed-badge {
+  padding: 2px 6px;
+  background: rgba(34, 197, 94, 0.15);
+  border-radius: 4px;
+  color: rgb(34, 197, 94);
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.extension-description {
+  font-size: 12px;
+  color: rgb(156, 163, 175);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.extension-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: rgb(107, 114, 128);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.extension-author {
+  font-weight: 500;
+}
+
+.extension-separator {
+  opacity: 0.5;
+}
+
+.extension-downloads,
+.extension-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.extension-button {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  border: none;
+  align-self: flex-start;
+}
+
+.extension-button.install {
+  background: linear-gradient(135deg, #C96731 0%, #B85A28 100%);
+  color: white;
+}
+
+.extension-button.install:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 103, 49, 0.3);
+}
+
+.extension-button.uninstall {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgb(229, 231, 235);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.extension-button.uninstall:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: rgb(239, 68, 68);
+}

@@ -1,0 +1,40 @@
+/* TerminalView Styles - VS Code Parity */
+
+.terminal-view {
+  padding: 12px;
+  background-color: #1e1e1e;
+  color: #cccccc;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+}
+
+.terminal-prompt {
+  color: #4ec9b0;
+  margin-right: 4px;
+}
+
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.terminal-placeholder {
+  margin-top: 8px;
+  color: #858585;
+  font-style: italic;
+}

@@ -1,0 +1,178 @@
+/**
+ * SearchPanel Styles
+ */
+
+.search-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(10, 15, 35, 0.95);
+}
+
+.search-input-container {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  background: rgba(15, 20, 40, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #C96731;
+  box-shadow: 0 0 0 2px rgba(201, 103, 49, 0.1);
+}
+
+.search-input::placeholder {
+  color: rgb(107, 114, 128);
+}
+
+.search-button {
+  padding: 8px 12px;
+  background: rgba(201, 103, 49, 0.15);
+  border: 1px solid rgba(201, 103, 49, 0.3);
+  border-radius: 6px;
+  color: #C96731;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  background: rgba(201, 103, 49, 0.25);
+  border-color: rgba(201, 103, 49, 0.5);
+}
+
+.search-options {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.option-button {
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.option-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgb(229, 231, 235);
+}
+
+.option-button.active {
+  background: rgba(201, 103, 49, 0.15);
+  border-color: rgba(201, 103, 49, 0.3);
+  color: #C96731;
+}
+
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.search-results::-webkit-scrollbar {
+  width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+  background: rgba(10, 15, 35, 0.5);
+}
+
+.search-results::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.search-status {
+  padding: 20px;
+  text-align: center;
+  color: rgb(107, 114, 128);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.results-count {
+  padding: 8px 0;
+  margin-bottom: 12px;
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-item {
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.result-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.result-file {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.result-file svg {
+  flex-shrink: 0;
+  color: rgb(156, 163, 175);
+}
+
+.result-line {
+  color: rgb(107, 114, 128);
+  font-weight: 400;
+}
+
+.result-content {
+  padding-left: 20px;
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

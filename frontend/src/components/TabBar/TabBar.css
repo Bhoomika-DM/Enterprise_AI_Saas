@@ -1,0 +1,28 @@
+/* TabBar Styles - Theme-aware */
+
+.tab-bar {
+  display: flex;
+  height: 35px;
+  background-color: var(--bg-primary);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-focus);
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.tab-bar::-webkit-scrollbar {
+  height: 0;
+}
+
+.tab-bar:hover::-webkit-scrollbar {
+  height: 4px;
+}
+
+.tab-bar::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 2px;
+}
+
+.tab-bar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}

@@ -1,0 +1,75 @@
+/* Menu Styles - VS Code Parity */
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-label {
+  padding: 4px 12px;
+  font-size: 13px;
+  color: #cccccc;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease;
+}
+
+.menu-label:hover,
+.menu-label.active {
+  background-color: #2a2d2e;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 220px;
+  background-color: #252526;
+  border: 1px solid #454545;
+  border-radius: 3px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  padding: 4px 0;
+  z-index: 1000;
+  margin-top: 2px;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 20px;
+  font-size: 13px;
+  color: #cccccc;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.1s ease;
+}
+
+.menu-item:hover {
+  background-color: #2a2d2e;
+}
+
+.menu-item.disabled {
+  color: #6c6c6c;
+  cursor: not-allowed;
+}
+
+.menu-item.disabled:hover {
+  background-color: transparent;
+}
+
+.menu-item-label {
+  flex: 1;
+}
+
+.menu-item-shortcut {
+  margin-left: 24px;
+  font-size: 11px;
+  color: #858585;
+}
+
+.menu-separator {
+  height: 1px;
+  background-color: #454545;
+  margin: 4px 0;
+}

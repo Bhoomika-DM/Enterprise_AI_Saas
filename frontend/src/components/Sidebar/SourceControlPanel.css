@@ -1,0 +1,445 @@
+/**
+ * SourceControlPanel Styles
+ */
+
+.source-control-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: rgba(10, 15, 35, 0.95);
+  overflow: hidden;
+}
+
+.commit-section {
+  flex-shrink: 0;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sync-section {
+  flex-shrink: 0;
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.changes-section {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+.git-info {
+  flex-shrink: 0;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.commit-message {
+  width: 100%;
+  padding: 10px;
+  background: rgba(15, 20, 40, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  resize: vertical;
+  min-height: 60px;
+  margin-bottom: 8px;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+.commit-message:focus {
+  outline: none;
+  border-color: #C96731;
+  box-shadow: 0 0 0 2px rgba(201, 103, 49, 0.1);
+}
+
+.commit-message::placeholder {
+  color: rgb(107, 114, 128);
+}
+
+.commit-button {
+  width: 100%;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #C96731 0%, #B85A28 100%);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.commit-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(201, 103, 49, 0.3);
+}
+
+.commit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.changes-section {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  padding: 12px;
+}
+
+.changes-section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.changes-section::-webkit-scrollbar-track {
+  background: rgba(10, 15, 35, 0.5);
+}
+
+.changes-section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.changes-section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgb(156, 163, 175);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.stage-all-button {
+  background: none;
+  border: none;
+  color: rgb(156, 163, 175);
+  cursor: pointer;
+  padding: 4px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.stage-all-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgb(229, 231, 235);
+}
+
+.stage-all-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.no-changes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+  color: rgb(107, 114, 128);
+}
+
+.no-changes-icon {
+  margin-bottom: 20px;
+  opacity: 0.6;
+  color: rgb(156, 163, 175);
+}
+
+.no-changes h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(229, 231, 235);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.no-changes-description {
+  margin: 0 0 20px 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgb(156, 163, 175);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  max-width: 280px;
+}
+
+.no-changes-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  font-size: 12px;
+  color: rgb(147, 197, 253);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: left;
+  max-width: 280px;
+  margin-bottom: 12px;
+}
+
+.no-changes-hint svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.no-changes-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.init-repo-button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #C96731 0%, #B85A28 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.init-repo-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 103, 49, 0.4);
+}
+
+.init-repo-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.changes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.change-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  transition: all 0.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.change-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stage-button {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(156, 163, 175);
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+  opacity: 0;
+}
+
+.change-item:hover .stage-button {
+  opacity: 1;
+}
+
+.stage-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #C96731;
+  color: #C96731;
+}
+
+.stage-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.change-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.change-name {
+  flex: 1;
+  color: rgb(229, 231, 235);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.change-status {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  background: rgba(201, 103, 49, 0.15);
+  border-radius: 4px;
+  color: #C96731;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.git-info {
+  flex-shrink: 0;
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgb(156, 163, 175);
+  font-size: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.info-item svg {
+  flex-shrink: 0;
+}
+
+.sync-button {
+  width: 100%;
+  padding: 10px 16px;
+  background: rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  border-radius: 6px;
+  color: rgb(147, 197, 253);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.sync-button:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 0.25);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+}
+
+.sync-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.sync-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.action-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #C96731;
+  color: #C96731;
+}
+
+.action-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.remote-url {
+  max-width: 100%;
+}
+
+.remote-url-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.forget-credentials-button {
+  width: 100%;
+  padding: 6px 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 4px;
+  color: rgb(248, 113, 113);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.forget-credentials-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.5);
+}

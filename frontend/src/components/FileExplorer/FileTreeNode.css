@@ -1,0 +1,84 @@
+/* FileTreeNode Styles - Theme-aware */
+
+.file-tree-node {
+  display: flex;
+  align-items: center;
+  height: 22px;
+  cursor: pointer;
+  user-select: none;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.file-tree-node:hover {
+  background-color: var(--bg-hover);
+  transform: translateX(2px);
+}
+
+.file-tree-node.folder {
+  font-weight: 500;
+}
+
+.file-tree-node.file {
+  font-weight: 400;
+}
+
+.folder-arrow {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 2px;
+  font-size: 8px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--text-secondary);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.folder-arrow.collapsed {
+  transform: rotate(0deg);
+}
+
+.folder-arrow.expanded {
+  transform: rotate(90deg);
+}
+
+.file-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.folder-children {
+  /* No additional styling needed - children handle their own indentation */
+}
+
+/* Active/selected state */
+.file-tree-node.active {
+  background-color: var(--bg-selected);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+/* Focus state */
+.file-tree-node:focus {
+  outline: 1px solid var(--accent-primary);
+  outline-offset: -1px;
+}

@@ -1,0 +1,40 @@
+/* MainEditorArea Styles - VS Code Parity */
+
+.main-editor-area {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #1e1e1e;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2d2d2d;
+}
+
+.editor-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.no-file-open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #858585;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.no-file-open p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.no-file-open .hint {
+  font-size: 12px;
+  color: #6a6a6a;
+}

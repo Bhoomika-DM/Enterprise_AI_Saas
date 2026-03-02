@@ -1,0 +1,102 @@
+/**
+ * DataScientistEditor Styles
+ * 
+ * Three-zone flexbox layout with custom color palette and animations
+ * Validates Requirements: 8.1, 8.4, 8.5, 6.1, 6.2
+ */
+
+/* Root container - full viewport height and width */
+.data-scientist-editor {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  backdrop-filter: blur(12px);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  overflow: hidden;
+}
+
+/* Main content area - contains sidebar and main editor */
+.data-scientist-editor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "sidebar main"
+    "sidebar bottom";
+}
+
+/* Left Zone: Sidebar */
+.editor-sidebar-zone {
+  grid-area: sidebar;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid var(--border-primary);
+  min-width: 48px; /* Icon bar width when collapsed */
+  transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1); /* ease-premium */
+  overflow: hidden;
+}
+
+/* Center Zone: Main Editor Area */
+.editor-main-zone {
+  grid-area: main;
+  background-color: var(--bg-primary);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1;
+  min-width: 0; /* Allow flexbox to shrink below content size */
+}
+
+/* Bottom Zone: Bottom Panel */
+.editor-bottom-zone {
+  grid-area: bottom;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-primary);
+  min-height: 0; /* Collapsed state */
+  transition: height 300ms cubic-bezier(0.22, 1, 0.36, 1); /* ease-premium */
+  overflow: hidden;
+}
+
+/* Placeholder styles for development */
+.sidebar-placeholder,
+.main-editor-placeholder,
+.bottom-panel-placeholder {
+  padding: 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Responsive behavior - maintain minimum dimensions */
+@media (max-width: 768px) {
+  .data-scientist-editor {
+    /* Prevent UI element overlap on small screens */
+    min-width: 600px;
+    min-height: 400px;
+  }
+}
+
+/* Ensure smooth transitions for panel animations */
+.editor-sidebar-zone,
+.editor-bottom-zone {
+  will-change: width, height;
+  transform: translateZ(0); /* GPU acceleration */
+}
+
+/* Focus management - no animations on editor focus */
+.editor-main-zone:focus-within {
+  /* No visual animations when editor receives focus */
+  transition: none;
+}
+
+/* Subtle glow effect on hover for interactive elements */
+.editor-sidebar-zone:hover,
+.editor-bottom-zone:hover {
+  border-color: var(--border-focus);
+}

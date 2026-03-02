@@ -1,0 +1,138 @@
+/**
+ * FindReplaceDialog Styles
+ */
+
+.find-replace-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 100px;
+  z-index: 10000;
+  animation: fadeIn 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.find-replace-dialog {
+  background: rgba(15, 20, 40, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideDown 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.find-input-group,
+.replace-input-group {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.find-input-group input,
+.replace-input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  padding-right: 100px;
+  background: rgba(10, 15, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  color: rgb(229, 231, 235);
+  font-size: 14px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  box-sizing: border-box;
+}
+
+.find-input-group input:focus,
+.replace-input-group input:focus {
+  outline: none;
+  border-color: #C96731;
+  box-shadow: 0 0 0 2px rgba(201, 103, 49, 0.1);
+}
+
+.find-input-group input::placeholder,
+.replace-input-group input::placeholder {
+  color: rgb(107, 114, 128);
+}
+
+.find-options {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.option-button {
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: rgb(156, 163, 175);
+  font-size: 11px;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.option-button:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: rgb(229, 231, 235);
+}
+
+.option-button.active {
+  background: rgba(201, 103, 49, 0.15);
+  border-color: rgba(201, 103, 49, 0.3);
+  color: #C96731;
+}
+
+.match-info {
+  padding: 8px 12px;
+  background: rgba(201, 103, 49, 0.1);
+  border: 1px solid rgba(201, 103, 49, 0.2);
+  border-radius: 6px;
+  color: rgb(251, 191, 36);
+  font-size: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: center;
+}
+
+.dialog-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.find-buttons,
+.replace-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.find-buttons .dialog-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

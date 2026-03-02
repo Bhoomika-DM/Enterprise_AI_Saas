@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border-subtle;
+    cursor: auto;
+  }
+  
+  body {
+    @apply bg-app-bg text-text-primary antialiased;
+    cursor: default;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+  
+  .ease-premium {
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .transform-gpu {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .aurora-flow {
+    animation: auroraFlow 18s ease-in-out infinite;
+  }
+  
+  .breathe-glow {
+    animation: breatheGlow 5s ease-in-out infinite;
+  }
+  
+  .float-soft {
+    animation: floatSoft 6s ease-in-out infinite;
+  }
+  
+  .border-pulse {
+    animation: borderPulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes auroraFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 0.6;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
+@keyframes breatheGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(201, 103, 49, 0.3), 0 0 40px rgba(34, 211, 238, 0.2);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(201, 103, 49, 0.5), 0 0 60px rgba(34, 211, 238, 0.3);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: rgba(201, 103, 49, 0.3);
+    box-shadow: 0 0 15px rgba(201, 103, 49, 0.2);
+  }
+  50% {
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.25);
+  }
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(2, 6, 23);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 103, 49, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 103, 49, 0.5);
+}

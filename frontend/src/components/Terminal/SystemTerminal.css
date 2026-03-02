@@ -1,0 +1,125 @@
+/**
+ * SystemTerminal Styles
+ */
+
+.system-terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0a0f23;
+  position: relative;
+}
+
+.terminal-error-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(239, 68, 68, 0.1);
+  border-bottom: 1px solid rgba(239, 68, 68, 0.3);
+  color: rgb(248, 113, 113);
+  font-size: 12px;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.terminal-error-banner svg {
+  flex-shrink: 0;
+}
+
+.system-terminal {
+  flex: 1;
+  padding: 12px;
+  overflow: hidden;
+}
+
+.system-terminal.disconnected {
+  opacity: 0.6;
+}
+
+.system-terminal .xterm {
+  height: 100%;
+  width: 100%;
+}
+
+.system-terminal .xterm-viewport {
+  overflow-y: auto !important;
+}
+
+/* Custom scrollbar for xterm */
+.system-terminal .xterm-viewport::-webkit-scrollbar {
+  width: 8px;
+}
+
+.system-terminal .xterm-viewport::-webkit-scrollbar-track {
+  background: rgba(10, 15, 35, 0.5);
+}
+
+.system-terminal .xterm-viewport::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.system-terminal .xterm-viewport::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.terminal-status {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(10, 15, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgb(156, 163, 175);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-indicator.connected .status-dot {
+  background: rgb(34, 197, 94);
+}
+
+.status-indicator.disconnected .status-dot {
+  background: rgb(239, 68, 68);
+  animation: none;
+}
+
+.status-text {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgb(156, 163, 175);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-indicator.connected .status-text {
+  color: rgb(34, 197, 94);
+}
+
+.status-indicator.disconnected .status-text {
+  color: rgb(239, 68, 68);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

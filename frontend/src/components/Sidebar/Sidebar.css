@@ -1,0 +1,121 @@
+/* Sidebar Styles - Custom Color Palette */
+
+.sidebar {
+  display: flex;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+}
+
+.sidebar-panel {
+  position: relative;
+  height: 100%;
+  background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Resize Handle */
+.sidebar-resize-handle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4px;
+  height: 100%;
+  cursor: col-resize;
+  background-color: transparent;
+  transition: background-color 150ms ease;
+  z-index: 10;
+}
+
+.sidebar-resize-handle:hover {
+  background-color: var(--border-focus);
+}
+
+.sidebar-resize-handle.resizing {
+  background-color: var(--accent-hover);
+}
+
+/* Visual indicator line on hover */
+.sidebar-resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background-color: var(--border-secondary);
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.sidebar-resize-handle:hover::before,
+.sidebar-resize-handle.resizing::before {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    width: 250px;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.panel-header {
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.panel-body {
+  padding: 12px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.panel-body p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+/* Custom scrollbar */
+.panel-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-body::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.panel-body::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.panel-body::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
