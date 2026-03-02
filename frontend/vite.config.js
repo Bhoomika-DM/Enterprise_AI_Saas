@@ -4,9 +4,27 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
-  // ✅ Fastest fix for blocked host in Vite preview
+  // Development server configuration
+  server: {
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
+  },
+
+  // Preview server configuration
   preview: {
-    allowedHosts: "all"
+    allowedHosts: "all",
+    proxy: {
+      '/api': {
+        target: process.env.VITE_API_URL || 'http://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   },
 
   test: {

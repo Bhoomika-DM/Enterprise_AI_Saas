@@ -17,7 +17,7 @@ export default function SignIn() {
     setLoading(true)
 
     try {
-      const response = await fetch('http://localhost:5000/api/auth/signin', {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ export default function SignIn() {
     console.log('========================================')
     console.log('🚀 Google Sign In Initiated')
     console.log('========================================')
-    console.log('Redirecting to: http://localhost:5000/api/auth/google')
+    console.log(`Redirecting to: ${import.meta.env.VITE_API_URL}/api/auth/google`)
     console.log('Expected flow:')
     console.log('1. Backend redirects to Google OAuth')
     console.log('2. Google redirects back to backend callback')
@@ -57,13 +57,13 @@ export default function SignIn() {
     console.log('========================================')
     
     // Redirect to backend Google OAuth endpoint
-    window.location.href = 'http://localhost:5000/api/auth/google'
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/google`
   }
 
   const handleXSignIn = () => {
     console.log('X Sign In clicked')
     // TODO: Implement X (Twitter) OAuth flow
-    // window.location.href = 'http://localhost:5000/api/auth/twitter'
+    // window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/twitter`
   }
 
   return (

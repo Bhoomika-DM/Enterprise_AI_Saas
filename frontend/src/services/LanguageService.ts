@@ -77,7 +77,7 @@ class LanguageService {
   private reconnectAttempts = 0;
   private maxReconnectAttempts = 5;
   private reconnectDelay = 3000;
-  private backendUrl = 'http://localhost:8000'; // TODO: Make configurable
+  private backendUrl = (import.meta as any).env?.VITE_API_URL || 'http://localhost:5000';
 
   /**
    * Switch to a new language

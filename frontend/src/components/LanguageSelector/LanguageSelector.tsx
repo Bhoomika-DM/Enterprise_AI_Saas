@@ -55,7 +55,7 @@ export function LanguageSelector() {
 
   const fetchAvailableLanguages = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/languages');
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/languages`);
       if (response.ok) {
         const languages = await response.json();
         // Map backend response to Language objects

@@ -121,13 +121,13 @@ export default function SignUp() {
   const handleGoogleSignUp = () => {
     setOauthLoading({ ...oauthLoading, google: true })
     // Redirect directly to backend OAuth endpoint
-    window.location.href = 'http://localhost:5000/api/auth/google'
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/google`
   }
 
   const handleXSignUp = () => {
     setOauthLoading({ ...oauthLoading, twitter: true })
     // Redirect directly to backend OAuth endpoint
-    window.location.href = 'http://localhost:5000/api/auth/twitter'
+    window.location.href = `${import.meta.env.VITE_API_URL}/api/auth/twitter`
   }
 
   const passwordStrength = getPasswordStrength(formData.password)

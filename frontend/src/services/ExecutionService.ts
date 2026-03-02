@@ -27,7 +27,7 @@ type OutputListener = (chunk: string, type: 'stdout' | 'stderr') => void;
 type StatusListener = (status: 'running' | 'completed' | 'failed') => void;
 
 class ExecutionService {
-  private backendUrl = 'http://localhost:8000'; // TODO: Make configurable
+  private backendUrl = (import.meta as any).env?.VITE_BACKEND_URL || 'http://localhost:8000';
   private activeExecutions = new Map<string, AbortController>();
 
   /**
