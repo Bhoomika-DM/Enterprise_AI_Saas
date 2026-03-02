@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  
-  // Preview settings for deployed frontend
+
+  // ✅ Fastest fix: allow all hosts for preview
   preview: {
-    allowedHosts: ['unique-freedom-production-db37.up.railway.app']
+    allowedHosts: "all"
   },
 
   test: {
