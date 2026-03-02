@@ -25,10 +25,10 @@ class Settings(BaseSettings):
     google_client_secret: str
     google_redirect_uri: str = "http://localhost:5000/api/auth/google/callback"
     
-    # Twitter OAuth
-    twitter_client_id: str
-    twitter_client_secret: str
-    twitter_redirect_uri: str = "http://localhost:5000/api/auth/twitter/callback"
+    # Twitter OAuth (Optional)
+    twitter_client_id: str | None = None
+    twitter_client_secret: str | None = None
+    twitter_redirect_uri: str | None = None
     
     class Config:
         env_file = ".env"
