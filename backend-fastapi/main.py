@@ -8,7 +8,6 @@ from starlette.middleware.sessions import SessionMiddleware
 from config import get_settings
 from routers import auth, user
 import uvicorn
-import secrets
 
 settings = get_settings()
 
@@ -32,15 +31,13 @@ app.add_middleware(
     secret_key=settings.jwt_secret
 )
 
-# CORS middleware
+# CORS middleware — use exact deployed URLs
+frontend_url = "https://unique-freedom-production-db37.up.railway.app"
+backend_url = "https://enterpriseaisaas-production.up.railway.app"
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        settings.frontend_url,
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "http://localhost:3000"
-    ],
+    allow_origins=[frontend_url, backend_url],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -50,10 +47,9 @@ app.add_middleware(
 app.include_router(auth.router)
 app.include_router(user.router)
 
-
+# Health check endpoint
 @app.get("/health")
 async def health_check():
-    """Health check endpoint"""
     return JSONResponse(
         content={
             "status": "ok",
@@ -62,10 +58,9 @@ async def health_check():
         }
     )
 
-
+# Root endpoint
 @app.get("/")
 async def root():
-    """Root endpoint"""
     return JSONResponse(
         content={
             "message": "Enterprise AI SaaS API",
@@ -74,7 +69,6 @@ async def root():
             "health": "/health"
         }
     )
-
 
 if __name__ == "__main__":
     uvicorn.run(
