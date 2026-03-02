@@ -22,6 +22,8 @@ fastapi-cors==0.0.6
 
 # Rate Limiting
 slowapi==0.1.9
+fastapi
+uvicorn
 
 # Validation
 email-validator==2.1.0
